@@ -35,17 +35,10 @@ article.journal-entry {
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 20px auto;
+  margin-bottom: 36px;
   padding: 15px;
   max-width: 600px;
 }
-
-/* .main-image {
-  width: 125px;
-  height: 168px;
-  border-radius: 8px;
-  object-fit: cover;
-  margin-right: 15px;
-} */
 
 article.journal-entry .marker {
     width: 9px;

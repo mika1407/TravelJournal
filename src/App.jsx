@@ -1,25 +1,26 @@
 import Header from './componets/Header'
 import Entry from './componets/Entry'
-
+import data from './data'; 
 
 function App() {
+  const entries = data.map(item => {
+    // Välitä jokainen 'item' (matkakohde) Entry-komponentille propsina
+    // Muista myös 'key' prop, kun renderöit listaa Reactissa
+    return (
+      <Entry
+        key={item.id} // Tärkeä, kun renderöit listaa!
+        item={item}   // Välitä koko item-objekti 'item'-nimisenä propsina
+      />
+    );
+  });
+
   return (
     <>
       <Header />
-      <main className="container">
-        <Entry img={{
-                src: "https://scrimba.com/links/travel-journal-japan-image-url", 
-                alt: "Mount Fuji"
-                }}
-                title="Mount Fuji"
-                location="Japan"
-                googleMapsUrl="https://maps.app.goo.gl/6RLYZDuuuqJ7kNGZ9"
-                dates="12 Jan, 2021 - 24 Jan, 2021"
-                description="Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists."
-        />
-      </main>
+      {/* Renderöi kaikki luodut Entry-komponentit */}
+      {entries}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
